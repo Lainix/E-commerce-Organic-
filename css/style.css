@@ -80,3 +80,11 @@ footer {
   background-color: gold;
   size:  medium;
 }
+
+#up{
+  text-decoration: none;
+}
+
+#op{
+  list-style:none
+}
