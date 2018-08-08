@@ -46,13 +46,14 @@
           </li>
           <li class="nav-item pl-2 pr-2" style="border-bottom:1px solid #622569;">
             <div class="cart text-center">
-              <i class="fa fa-shopping-basket fa-2x shopping-cart"></i>
+              <i id="cart" class="fa fa-shopping-basket fa-2x shopping-cart"></i>
               <i class="fa fa-caret-down"></i>
 
               <span id="items-basket">0</span>
             </div>
             <div id="cart-items" class="card text-center col-lg-3 col-md-3 col-sm-6 col-xs-6 offset-sm-1" style="background-color:#77a8a8">
               <div class="card-body">
+                <i id="close" class="fas fa-times"></i>
                 <span id="emptyCart">Carro sin productos </span>
                 <ol class="list-group list-group-flush" id="list-item"></ol>
               </div>
@@ -110,13 +111,13 @@
           <a href="#" id="categories-title" class="list-group-item list-group-item-action active" style="background-color:#77a8a8">Productos
           </a>
           <a id="ejecutar" href="#" class="list-group-item list-group-item-action">Organicos</a>
-          <a href="#" class="list-group-item list-group-item-action">productos organico</a>
+          <a id="ejecutar2" href="#" class="list-group-item list-group-item-action">productos organico</a>
         </div>
       </div>
       <!--column-->
       <div class="col-lg-9 col-md-9 col-sm-12" id="Product">
         <h2 class="align-left">Productos</h2>
-        <div class="" id="product"></div>
+        <div class="caja2" id="product"></div>
         <div class="caja" id="productOrganic"></div>
       </div>
     </div>

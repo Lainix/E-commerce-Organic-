@@ -7,8 +7,8 @@ body {
 
 .carousel {
   /* margin: 20px auto; */
-  /* width: 60%; */
-  /* height: 90%; */
+  /* width: 500px; */
+  /* height: 100%; */
   /* padding:30px; */
   position: relative;
   /* display:table; */
@@ -76,4 +76,7 @@ footer {
   margin: 2%;
 }
 
-
+#paypal {
+  background-color: gold;
+  size:  medium;
+}
