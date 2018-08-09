@@ -5,7 +5,7 @@ $(document).ready(() => {
     $('.caja').show();
     $('.caja2').hide();
   });
-  
+
   $('#ejecutar2').on('click', function (event) {
     event.preventDefault();
     $('.caja2').show();
@@ -13,7 +13,7 @@ $(document).ready(() => {
   });
 
   $('#cart').on('click', function (event) {
-    event.preventDefault();    
+    event.preventDefault();
     $('#cart-items').show();
   });
 
@@ -90,148 +90,147 @@ $(document).ready(() => {
 
 
   paypal.Button.render({
-    env: 'sandbox', 
+    env: 'sandbox',
     client: {
-        sandbox:    'AeXSfeSjCOFR8f0nEcVRxbIaI8g9TBWGMMBGHE-2PfFwa0TFoU0t40zltz0FBpw6K73t_7HfMEJ3DOBE',
-        production: '<insert production client id>'
+      sandbox: 'AeXSfeSjCOFR8f0nEcVRxbIaI8g9TBWGMMBGHE-2PfFwa0TFoU0t40zltz0FBpw6K73t_7HfMEJ3DOBE',
+      production: '<insert production client id>'
     },
-    payment: function() {
-        var env    = this.props.env;
-        var client = this.props.client;
-        return paypal.rest.payment.create(env, client, {
-            transactions: [
-                {
-                    amount: { total: '1.00', currency: 'USD' }
-                }
-            ]
+    payment: function () {
+      var env = this.props.env;
+      var client = this.props.client;
+      return paypal.rest.payment.create(env, client, {
+        transactions: [
+          {
+            amount: { total: '1.00', currency: 'USD' }
+          }
+        ]
+      });
+    },
+    commit: true,
+    onAuthorize: function (data, actions) {
+      return actions.payment.execute()
+        .then(function () {
+          window.alert('Gracias por tu compra!');
         });
-    },
-    commit: true, 
-    onAuthorize: function(data, actions) {
-        return actions.payment.execute()
-            .then(function () {
-              window.alert('Thank you for your purchase!');
-            });
     }
-}, '#paypal-button');
+  }, '#paypal-button');
 
 
 
-$(".add-to-cart").click(function(event){
-  event.preventDefault();
-  var name = $(this).attr("data-name");
-  var price = Number ($(this).attr("data-price"));
-  
-  addItemToCart(name, price, 1);
-  displayCart()
-});
+  $(".add-to-cart").click(function (event) {
+    event.preventDefault();
+    var name = $(this).attr("data-name");
+    var price = Number($(this).attr("data-price"));
+
+    addItemToCart(name, price, 1);
+    displayCart()
+  });
 
 
-function displayCart(){
-  var cartArray = listCart();
-  var output = "";
-  for (var i in cartArray) {
-      output += "<li>"+cartArray[i].name+" "+cartArray[i].count+"</li>"
+  function displayCart() {
+    var cartArray = listCart();
+    var output = "";
+    for (var i in cartArray) {
+      output += "<li>" + cartArray[i].name + " " + cartArray[i].count + "</li>"
+    }
+    $("#show-cart").html(output);
+    $("#total-cart").html(totalCart());
   }
-  $("#show-cart").html(output);
-  $("#total-cart").html( totalCart() );
-}
 
-var cart = [];
+  var cart = [];
 
-var Item = function(name, price, count){
-  this.name = name
-  this.price = price
-  this.count = count
-}
+  var Item = function (name, price, count) {
+    this.name = name
+    this.price = price
+    this.count = count
+  }
 
-function addItemToCart(name, price, count){
-  for(var i in cart){
-      if(cart[i].name == name){
-          cart[i].count += count;
-          saveCart();
-          return;
+  function addItemToCart(name, price, count) {
+    for (var i in cart) {
+      if (cart[i].name == name) {
+        cart[i].count += count;
+        saveCart();
+        return;
       }
+    }
+    var item = new Item(name, price, count);
+    cart.push(item);
+    saveCart();
   }
-  var item = new Item(name, price, count);
-  cart.push(item);
-  saveCart();
-}
 
 
-function removeItemFromCart(name){
-  for(var i in cart){
-      if(cart[i].name === name){
-          cart[i].count --;   
-          if(cart[i].count === 0){
-              cart.splice(i, 1);
-          } 
-          break;        
-      }
-  }
-  saveCart();
-}
-
-function removeItemFromCartAll(name){
-  for(var i in cart){
-      if(cart[i].name === name){
+  function removeItemFromCart(name) {
+    for (var i in cart) {
+      if (cart[i].name === name) {
+        cart[i].count--;
+        if (cart[i].count === 0) {
           cart.splice(i, 1);
-          break;
+        }
+        break;
       }
+    }
+    saveCart();
   }
-  saveCart();
-}
 
-function clearCart(){
-  cart = [];
-  saveCart();
-}
+  function removeItemFromCartAll(name) {
+    for (var i in cart) {
+      if (cart[i].name === name) {
+        cart.splice(i, 1);
+        break;
+      }
+    }
+    saveCart();
+  }
 
-// clearCart();
+  function clearCart() {
+    cart = [];
+    saveCart();
+  }
 
-function countCart(){
-  var totalCount = 0;
-  for(var i in cart){
+
+  function countCart() {
+    var totalCount = 0;
+    for (var i in cart) {
       totalCount += cart[i].count;
+    }
+    return totalCount;
   }
-  return totalCount;
-}
 
-console.log( countCart() );
+  console.log(countCart());
 
-function totalCart(){
-  var totalCost = 0;
-  for(var i in cart){
+  function totalCart() {
+    var totalCost = 0;
+    for (var i in cart) {
       totalCost += cart[i].price * cart[i].count;
+    }
+    return totalCost;
   }
-  return totalCost;
-}
 
-function listCart(){
-  var cartCopy = [];
-  for(var i in cart){
+  function listCart() {
+    var cartCopy = [];
+    for (var i in cart) {
       var item = cart[i];
       var itemCopy = {};
-      for (var p in item){
-          itemCopy[p] = item[p];
+      for (var p in item) {
+        itemCopy[p] = item[p];
       }
       cartCopy.push(itemCopy);
+    }
+    return cartCopy;
   }
-  return cartCopy;
-}
 
-function saveCart(){
-  localStorage.setItem("shoppingCart", JSON.stringify(cart));
-}
+  function saveCart() {
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+  }
 
 
-function loadCart(){
-  cart = JSON.parse(localStorage.getItem("shoppingCart"));
-}
+  function loadCart() {
+    cart = JSON.parse(localStorage.getItem("shoppingCart"));
+  }
 
-loadCart();
+  loadCart();
 
-displayCart();
+  displayCart();
 
 });
 
