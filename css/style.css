@@ -76,9 +76,8 @@ footer {
   margin: 2%;
 }
 
-#paypal {
-  background-color: gold;
-  size:  medium;
+#paypal-button {
+  z-index: -999;
 }
 
 #up{

@@ -57,13 +57,28 @@
       <div id="cart-items" class="card text-center col-lg-3 col-md-3 col-sm-6 col-xs-6 offset-sm-1" style="background-color:#77a8a8">
         <div class="card-body">
           <i id="close" class="fas fa-times"></i>
-          <span id="emptyCart">Carro sin productos </span>
+          <span id="emptyCart">Carrito </span>
           <ol class="list-group list-group-flush" id="list-item"></ol>
         </div>
-        <div class="card-title">Total :
-          <span id="total-price">$0</span>
+        <div class="card-title">
+          <div id="paypal-button"></div>
+          <div>
+            <ul>
+              <li>
+                <a class="add-to-cart" href="#" data-name="Apple" data-price "1">Applet $1</a>
+              </li>
+            </ul>
+            <button id="clear-cart">Clear Cart</button>
+          </div>
+
+          <div>
+            <ul id="show-cart">
+            </ul>
+            <div>Total : $
+              <span id="total-cart"></span>
+            </div>
+          </div>
         </div>
-      </div>
     </nav>
   </header>
 
@@ -130,7 +145,21 @@
                 </a>
               </li>
             </div>
-            <div class="caja2" id="product"></div>
+            <div class="caja2" id="product">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-title">
+                        <div id="paypal-button"></div>
+                        <div>
+                      </div>
+                    <div class="card-body">
+                        <img class="card-img-top" style="width: 10rem;" src="assets/img/Exfoliante.jpg" alt="Card image cap">
+                        <h5 class="card-title">Exfoliante</h5>
+                        <p class="card-text">$150</p>
+                        <a href="#" id="paypal-button" class="btn btn-primary" style="background-color:#77a8a8">Agregar al carro</a> 
+                        <!-- <div id="paypal-button"></div>                        -->
+                    </div>
+                 </div>
+            </div>
             <div class="caja" id="productOrganic"></div>
           </div>
           <div class="col-lg-1 col-md-1 col-sm-12 col-12 d-none d-md-block">
@@ -212,7 +241,9 @@
 
   </footer>
 
+
   <!-- Script´s -->
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
