@@ -1,7 +1,8 @@
 # Organic
+
+> Es una web app e-commerce dedicada alos productos organicos ya que cada dia se vuelve un reto en encontrar productos saludables, asi como articulos 100% de producctos naturales, para eso cree "Organic"
+
 ![Organic](https://user-images.githubusercontent.com/32379941/45058659-efb79380-b05e-11e8-82c1-b987dcaa9c98.PNG)
-![Organic](assets/img/Organic-productos.PNG)
-![Organic](assets/img/Organic-video.PNG)
 
 ## EL RETO
 
@@ -28,7 +29,7 @@ Despliega tu repositorio a GH Pages explicando en qué consiste el reto en tu ar
 
 ***
 
-### Producto
+### Descripción
 
 > Es una web app e-commerce dedicada alos productos organicos ya que cada dia se vuelve un reto en encontrar productos saludables, asi como articulos 100% de producctos naturales, para eso cree "Organic"
 
@@ -40,3 +41,13 @@ Para poder realizar comprar se requiere una cuenta prueba:
 > Contraseña: 12345678
 
 ***
+
+## Desarrollado para 
+[Laboratoria](http://laboratoria.la)
+
+***
+
+###
+![Organic](assets/img/Organic.PNG)
+![Organic](assets/img/Organic-productos.PNG)
+![Organic](assets/img/Organic-video.PNG)
