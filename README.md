@@ -1,3 +1,9 @@
+# Organic
+
+![Organic](assets/img/Organic.PNG)
+![Organic](assets/img/Organic-productos.PNG)
+![Organic](assets/img/Organic-video.PNG)
+
 # EL RETO
 
 >Como reto final de este curso deberás crear una app web bajo los principios de SPA (Single page aplication).
@@ -35,7 +41,3 @@ Para poder realizar comprar se requiere una cuenta prueba:
 > Contraseña: 12345678
 
 ***
-# Organic
-![Organic](assets/img/Organic.PNG)
-![Organic](assets/img/Organic-productos.PNG)
-![Organic](assets/img/Organic-video.PNG)
