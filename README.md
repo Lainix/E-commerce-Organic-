@@ -1,8 +1,9 @@
-# Organic
-
 ![Organic](assets/img/Organic.PNG)
 ![Organic](assets/img/Organic-productos.PNG)
 ![Organic](assets/img/Organic-video.PNG)
+
+# Organic
+
 
 # EL RETO
 
