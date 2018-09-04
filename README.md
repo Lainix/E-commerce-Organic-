@@ -1,11 +1,9 @@
-![Organic](assets/img/Organic.PNG)
+# Organic
+![Organic](https://user-images.githubusercontent.com/32379941/45058659-efb79380-b05e-11e8-82c1-b987dcaa9c98.PNG)
 ![Organic](assets/img/Organic-productos.PNG)
 ![Organic](assets/img/Organic-video.PNG)
 
-# Organic
-
-
-# EL RETO
+## EL RETO
 
 >Como reto final de este curso deberás crear una app web bajo los principios de SPA (Single page aplication).
 
@@ -30,7 +28,7 @@ Despliega tu repositorio a GH Pages explicando en qué consiste el reto en tu ar
 
 ***
 
-# Producto
+### Producto
 
 > Es una web app e-commerce dedicada alos productos organicos ya que cada dia se vuelve un reto en encontrar productos saludables, asi como articulos 100% de producctos naturales, para eso cree "Organic"
 
